@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
 * Студент: [Yuliya Berzhanina](https://up.htmlacademy.ru/javascript-individual/1/user/562127).
-* Наставник: `Неизвестно`.
+* Наставник: `Павел Ившин`.
 
 ---
 
