@@ -1,15 +1,10 @@
-/* eslint-disable no-console */
-
 function checkPalindrom (phrase) {
   //split('х') разбивает строку на массив по заданному разделителю х, если его не указать - разбивает  на буквы
   //reverse() меняет порядок элементов в массиве на обратный
   //join('х') создает строку из элементов массива, вставляя х между ними
   //replaceAll('x', 'y') возвращает новую строку заменив все х на у
   const newPhrase = phrase.replaceAll(' ', '').split('').reverse().join('');
-  if (phrase.replaceAll(' ', '').toLowerCase() === newPhrase.toLowerCase()) {
-    return console.log(true);
-  }
-  return console.log(false);
+  return (phrase.replaceAll(' ', '').toLowerCase() === newPhrase.toLowerCase());
 }
 checkPalindrom('топот');
 checkPalindrom('ДовОд');
@@ -21,7 +16,7 @@ function extractNumbers (phrase) {
   // выражение [0-9]/g используется для поиска всех чисел в промежутке от 0 до 9
   // выражение [^0-9]/g используется для поиска всех "нечисел"
   const newString = phrase.toString().replaceAll(/[^0-9]/g, '');
-  return console.log(parseInt(newString, 10));
+  return parseInt(newString, 10);
 }
 extractNumbers('2023 год');
 extractNumbers('ECMAScript 2022');
@@ -34,17 +29,17 @@ extractNumbers(1.5);
 
 function creationAddress (phrase, minLength, addition) {
   if (phrase.length >= minLength) {
-    return console.log(phrase);
+    return phrase;
   }
   //узнаем сколько символов нужно добавить
   const count = minLength - phrase.length;
   if (addition.length === count) {
-    return console.log(addition + phrase);
+    return (addition + phrase);
   }
   if (addition.length > count) {
     //substring(begin, end) отдает часть строки между индексами begin (не включая) и end
     const newAddition = addition.substring(0, count);
-    return console.log(newAddition + phrase);
+    return (newAddition + phrase);
   }
   if (addition.length < count) {
     phrase = addition + phrase;
@@ -58,10 +53,7 @@ creationAddress('q', 4, 'we');
 creationAddress('qwerty', 4, '0');
 
 function checkLength (phrase, maxLength) {
-  if (phrase.length <= maxLength) {
-    return console.log(true);
-  }
-  return console.log(false);
+  return (phrase.length <= maxLength);
 }
 checkLength('проверяемая строка', 20);
 checkLength('проверяемая строка', 18);
