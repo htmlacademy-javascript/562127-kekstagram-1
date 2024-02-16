@@ -94,4 +94,5 @@ const createPhoto = () => ({
 //создаем массив из необходимого числа сгенерированных объектов:
 const photos = Array.from({length: countOfObjects}, createPhoto);
 
-
+// eslint-disable-next-line no-console
+console.log(photos);
