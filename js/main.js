@@ -78,14 +78,14 @@ const getRandomArrayElement = (elements) => elements[getRandomNumber(0, elements
 //создаем объект комментарий:
 const createComment = () => ({
   id: commentId(),
-  avatar: 'img/avatar-' + getRandomNumber(countAvatarMin, countAvatarMax) + '.svg',
+  avatar: `img/avatar-${ getRandomNumber(countAvatarMin, countAvatarMax) }.svg`,
   message: getRandomArrayElement(MESSAGES),
   name: getRandomArrayElement(NAMES),
 });
 //создаем объект описание фото:
 const createPhoto = () => ({
   id: photoID(),
-  url: 'photos/' + urlId() + '.jpg',
+  url: `photos/${ urlId() }.jpg`,
   description: getRandomArrayElement(DESCRIPTIONS),
   likes: getRandomNumber(countOfLikesMin, countOfLikesMax),
   comments: Array.from({length: getRandomNumber(countOfCommentsMin, countOfCommentsMax)}, createComment),
@@ -93,4 +93,5 @@ const createPhoto = () => ({
 
 //создаем массив из необходимого числа сгенерированных объектов:
 const photos = Array.from({length: countOfObjects}, createPhoto);
+
 
